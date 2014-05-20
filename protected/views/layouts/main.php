@@ -1,59 +1,144 @@
 <?php /* @var $this Controller */ ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="language" content="en" />
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
 
-	<!-- blueprint CSS framework -->
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
-	<!--[if lt IE 8]>
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
-	<![endif]-->
+        <!-- blueprint CSS framework -->
 
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css" media="screen, projection" />
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" media="screen, projection" />
 
-	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
-</head>
+        <!--[if lt IE 8]>
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
+        <![endif]-->
 
-<body>
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
 
-<div class="container" id="page">
+        <title><?php echo CHtml::encode($this->pageTitle); ?></title>
+    </head>
 
-	<div id="header">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
-	</div><!-- header -->
+    <body>
+        <section id="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <nav class="navbar navbar-default" role="navigation">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand"><?php echo CHtml::encode(Yii::app()->name); ?></a>
+                            </div>
+                            <div class="collapse navbar-collapse" id="collapse">
 
-	<div id="mainmenu">
-		<?php $this->widget('zii.widgets.CMenu',array(
-			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-			),
-		)); ?>
-	</div><!-- mainmenu -->
-	<?php if(isset($this->breadcrumbs)):?>
-		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
-	<?php endif?>
+                                <?php
+                                $this->widget('zii.widgets.CMenu', array(
+                                    'htmlOptions' => array(
+                                        'id' => 'ssss',
+                                        'class' => 'nav navbar-nav navbar-left'
+                                    ),
+                                    'items' => array(
+                                        array('label' => 'Home', 'url' => array('/site/index')),
+                                        array('label' => 'Markets', 'url' => array('/site/market')),
+                                        array('label' => 'About', 'url' => array('/site/page', 'view' => 'about')),
+                                        array('label' => 'Contact', 'url' => array('/site/contact')),
+                                        array('label' => 'Login', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
+                                        array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/site/logout'), 'visible' => !Yii::app()->user->isGuest)
+                                    ),
+                                ));
+                                ?>                                
 
-	<?php echo $content; ?>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li>
+                                        <a href="#" class="btn btn-flat-info">Sign In</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="btn btn-flat-warning">
+                                            Sign Up
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="property-carousel">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="property-main-slider">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div id="carousel" class="carousel slide" data-ride="carousel">
 
-	<div class="clear"></div>
+                                <div class="carousel-inner">
 
-	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
-	</div><!-- footer -->
+                                    <div class="item active">
+                                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/HK_Yau_Ma_Tei_碧桂園_Country_Garden_宏利公積金大廈_Manulife_MPF_Place_ShowFlat_bathroom_view_bedroom_Apr-2013.JPG" alt="...">
+                                        <div class="carousel-caption">
 
-</div><!-- page -->
+                                        </div>
+                                    </div>
+                                </div>
 
-</body>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container" id="page">
+            <!--
+                        <div id="header">
+                            <div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
+                        </div><!-- header -->
+
+            <!--            <div id="mainmenu">
+            <?php
+            $this->widget('zii.widgets.CMenu', array(
+                'items' => array(
+                    array('label' => 'Home', 'url' => array('/site/index')),
+                    array('label' => 'About', 'url' => array('/site/page', 'view' => 'about')),
+                    array('label' => 'Contact', 'url' => array('/site/contact')),
+                    array('label' => 'Login', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
+                    array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/site/logout'), 'visible' => !Yii::app()->user->isGuest)
+                ),
+            ));
+            ?>
+                        </div> mainmenu -->
+            <?php if (isset($this->breadcrumbs)): ?>
+                <?php
+                $this->widget('zii.widgets.CBreadcrumbs', array(
+                    'links' => $this->breadcrumbs,
+                ));
+                ?><!-- breadcrumbs -->
+            <?php endif ?>
+
+            <?php echo $content; ?>
+
+            <div class="clear"></div>
+
+            <div id="footer">
+                Copyright &copy; <?php echo date('Y'); ?> <a href="http://kikosi.co.ke" target="_blank">Kikosi Limited</a>.<br/>
+                All Rights Reserved.<br/>
+                <?php //echo Yii::powered(); ?>
+            </div><!-- footer -->
+
+        </div><!-- page -->
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>js/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/library/jquery/jquery.min.js">\x3C/script>');</script>
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.min(1).js" type="text/javascript"></script>
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/modernizr-latest.js" type="text/javascript"></script>
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.sparkline.min.js" type="text/javascript"></script>
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/thumbscrubber.js" type="text/javascript"></script>
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.filmstrip.js" type="text/javascript"></script>
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/script.js" type="text/javascript"></script>
+    </body>
 </html>
