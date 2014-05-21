@@ -250,7 +250,7 @@ span.citer{
     text-transform:none;
     font-size:14px;
     font-family:'Montserrat',Helvetica,sans-serif;
-    color:#000;
+    color:#fff;
     padding-top:8px;
     padding-bottom:8px;
     border-radius:3px;
@@ -309,7 +309,7 @@ form{
 }
 form input,form input[type="text"],form input[type="password"],
 form input[type="email"],form input[type="tel"],form textarea{
-    border:0;
+    border: 1px solid;
     box-shadow:0 0 0 transparent
 }
 form.form-inline.form-search .form-group .form-control{
@@ -456,7 +456,6 @@ form.normal-form .btn-radio:hover,form.normal-form .btn-radio.active{
 }
 #property-carousel .carousel img{
     width:100%;
-    position:relative;
     bottom:60%
 }
 #property-carousel .carousel .carousel-inner>.item{

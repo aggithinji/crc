@@ -70,34 +70,12 @@
                 </div>
             </div>
         </section>
-        <section id="property-carousel">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="property-main-slider">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <div id="carousel" class="carousel slide" data-ride="carousel">
 
-                                <div class="carousel-inner">
-
-                                    <div class="item active">
-                                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/HK_Yau_Ma_Tei_碧桂園_Country_Garden_宏利公積金大廈_Manulife_MPF_Place_ShowFlat_bathroom_view_bedroom_Apr-2013.JPG" alt="...">
-                                        <div class="carousel-caption">
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <div class="container" id="page">
             <!--
                         <div id="header">
-                            <div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
+                            <div id="logo"><?php //echo CHtml::encode(Yii::app()->name);  ?></div>
                         </div><!-- header -->
 
             <!--            <div id="mainmenu">
@@ -125,11 +103,7 @@
 
             <div class="clear"></div>
 
-            <div id="footer">
-                Copyright &copy; <?php echo date('Y'); ?> <a href="http://kikosi.co.ke" target="_blank">Kikosi Limited</a>.<br/>
-                All Rights Reserved.<br/>
-                <?php //echo Yii::powered(); ?>
-            </div><!-- footer -->
+
 
         </div><!-- page -->
         <script src="<?php echo Yii::app()->request->baseUrl; ?>js/jquery.min.js"></script>
@@ -140,5 +114,10 @@
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/thumbscrubber.js" type="text/javascript"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.filmstrip.js" type="text/javascript"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/script.js" type="text/javascript"></script>
+        <div id="footer">
+            Copyright &copy; <?php echo date('Y'); ?> <a href="http://kikosi.co.ke" target="_blank">Kikosi Limited</a>.<br/>
+            All Rights Reserved.<br/>
+            <?php //echo Yii::powered(); ?>
+        </div><!-- footer -->
     </body>
 </html>
