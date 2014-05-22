@@ -45,7 +45,7 @@
                                     ),
                                     'items' => array(
                                         array('label' => 'Home', 'url' => array('/site/index')),
-                                        array('label' => 'Markets', 'url' => array('/site/market')),
+                                        array('label' => 'Markets', 'url' => array('/market')),
                                         array('label' => 'About', 'url' => array('/site/page', 'view' => 'about')),
                                         array('label' => 'Contact', 'url' => array('/site/contact')),
                                         array('label' => 'Login', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
@@ -75,7 +75,7 @@
         <div class="container" id="page">
             <!--
                         <div id="header">
-                            <div id="logo"><?php //echo CHtml::encode(Yii::app()->name);  ?></div>
+                            <div id="logo"><?php //echo CHtml::encode(Yii::app()->name);   ?></div>
                         </div><!-- header -->
 
             <!--            <div id="mainmenu">

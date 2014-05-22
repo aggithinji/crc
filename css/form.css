@@ -36,6 +36,8 @@
 
 div.form
 {
+    max-width: 300px;
+    margin: auto;
 }
 
 div.form input,
