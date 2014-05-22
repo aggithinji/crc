@@ -13,6 +13,7 @@ return array(
     'import' => array(
         'application.models.*',
         'application.components.*',
+        'ext.yii-mail.YiiMailMessage',
     ),
     'modules' => array(
         // uncomment the following to enable the Gii tool
@@ -74,6 +75,22 @@ return array(
             ),
         ),
     ),
+    'mail' => array(
+          'application.extensions.yii-mail.YiiMail',  
+          'transportType'=>'smtp', /// case sensitive!
+          'transportOptions'=>array(
+            'host'=>'mail.google.com',
+            'username'=>'info@google.com',
+            // or email@googleappsdomain.com
+            'password'=> '',
+            'port'=>'',
+            'encryption'=>'',
+            ),
+        'viewPath' => 'application.views.mail',
+        'logging' => true,
+        'dryRun' => false
+             ),
+
     // application-level parameters that can be accessed
     // using Yii::app()->params['paramName']
     'params' => array(
